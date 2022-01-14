@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mysql:
+    image: "mysql"
+    environment:
+      - MYSQL_DATABASE=api-golang
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=
+      - MYSQL_HOST=localhost
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./migration/docker-database-initial.sql:/docker-entrypoint-initdb.d/docker-database-initial.sql   
+
+
+
